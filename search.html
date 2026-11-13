@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CODEsk</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="Index.html"><img src="CODEsk-removebg-preview.png" alt="logo"></a>
+        </div>
+        <i class="fa fa-bars hamburger" id="hamburger"></i>
+        </div>
+        <div class="options" id="options">
+            <a href="#" class="opt"><span>Projects</span></a>
+            <a href="#" class="opt"><span>Contact us</span></a>
+            <a href="#" class="opt"><span>Support us</span></a>
+            <a href="#" class="opt"><span>Search</span></a>
+            <a href="#" class="opt"><span>About</span></a>
+        </div>
+    </nav>
+
+    <div class="search-box">
+        <input type="text" class="search" placeholder="Search for a template...">
+        <div class="search-btn"><i class="fa fa-search"></i></div>
+    </div>
+
+    <h1 class="tempheading">Free Templates</h1>
+
+    <div class="contentbox">
+
+        <h1 class="title">Basic Templates</h1>
+        <div id="copiedBox" class="copied-message">Text Copied!</div>
+        <div class="innercontainer">
+            <div class="box"><button class="button1" onclick="copyText(this)" data-target="line1">Button</button></div>
+            <div class="box"><button class="button2" style="margin-top: 10px" onclick="copyText(this)" data-target="line2">Button</button></div>
+            <div class="box"><a href="" class="a1" style="--clr:#6eff3e"><span>Button</span><i></i></a></div>
+            <div class="box"><button class="button4">Button</button></div>
+            <div class="box"><button class="button5">Button</button></div>
+            <div class="box"><button class="button6">Button</button></div>
+            <div class="box"><button class="button7">Button</button></div>
+            <div class="box"><span class="button8">Button</span></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+
+        </div>
+        <h1 class="title">Games</h1>
+        <div class="innercontainer">
+
+            <div class="box"><span class="button10">Minecraft</span></div>
+
+            <div class="box"><span class="button11">Minecraft</span></div>
+            <div class="box"> <a href="#" class="play-button">
+                <div class="icon"></div>
+                <span class="text">Play!</span>
+              </a></div>
+            <div class="box"><button class="button4">Button</button></div>
+            <div class="box"><button class="button5">Button</button></div>
+            <div class="box"><button class="button6">Button</button></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+    </div>
+    <pre><code id="line1" class="hidden_text">&lt;button class="button1"&gt;Button&lt;/button&gt;
+        &lt;style&gt;
+        .button1 {
+            padding: 20px 30px;
+            font-size: 25px;
+            text-decoration: none;
+            color: white;
+            background-color: transparent;
+            border: 0px;
+            transition: 0.2s ease-in-out;
+        }
+    
+        .button1:hover {
+            background-color: #db4b2bc9;
+            border-radius: 5px;
+        }
+    &lt;/style&gt;
+    
+    </code></pre>
+    
+    <pre><code id="line2" class="hidden_text">&lt;button class="button2"&gt;Button&lt;/button&gt;
+        &lt;style&gt;
+        .button2{
+            cursor: pointer;
+            margin: calc(var(--spacer)* 2) 0 0 2px;
+            padding: 0.75rem 1.25rem;
+            color: white;
+            background-color: black;
+            box-shadow: 4px 4px 0 rgba(30, 144, 255, 0.2);
+            font-family: monospace;
+            font-size: 20px;
+        }
+        &lt;/style&gt;
+    </code></pre>
+
+
+    <script>
+        // JavaScript for toggling the navbar in smaller screens
+        const hamburger = document.getElementById('hamburger');
+        const options = document.getElementById('options');
+
+        hamburger.addEventListener('click', () => {
+            options.classList.toggle('show');
+        });
+        function copyText(button) {
+    const targetId = button.getAttribute("data-target");
+    const text = document.getElementById(targetId).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        const box = document.getElementById("copiedBox");
+        box.style.display = "block";
+        box.classList.add("show");
+
+        setTimeout(() => {
+            box.classList.remove("show");
+            box.style.display = "none";
+        }, 1000);
+    }).catch(err => {
+        console.error("Failed to copy:", err);
+    });
+}
+
+    </script>
+</body>
+
+</html>
